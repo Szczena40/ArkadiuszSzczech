@@ -1,0 +1,71 @@
+package ArkadiuszSzczech;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int tab[] = new int[10];
+        Scanner scanIn = new Scanner(System.in);
+
+        System.out.print("Podaj 10 liczb: ");
+        for (int i = 0; i < 10; i++)
+            tab[i] = scanIn.nextInt();
+
+        System.out.print("Twoja tablica: ");
+        for (int i = 0; i < 10; i++)
+
+            System.out.print(tab[i] + ", ");
+        System.out.println(" ");
+
+        int x;
+        System.out.println(" ");
+        System.out.println("                            " + "MENU");
+        System.out.println(" ");
+        System.out.println("Aby obliczyć sumę elementów tablicy naciśnij 1");
+        System.out.println("Aby obliczyć iloczyn elementów tablicy naciśnij 2");
+        System.out.println("Aby obliczyć średnią elementów tablicy naciśnij 3");
+        System.out.println("Aby wyznaczyć wartość minimalną tablicy naciśnij 4");
+        System.out.println("Aby wyznaczyć wartość maksymalną tablicy naciśnij 5");
+
+        x = scanIn.nextInt();
+        System.out.println(" ");
+
+        if (x == 1) {
+            int sum = 0;
+            for (int i = 0; i < 10; i++) {
+                sum += tab[i];
+            }
+            System.out.print("Suma elementów tablicy wynosi: " + sum);
+        } else if (x == 2) {
+            int il = 1;
+            for (int i = 0; i < 10; i++) {
+                il *= tab[i];
+            }
+            System.out.print("Iloczyn elementów tablicy wynosi: " + il);
+        } else if (x == 3) {
+            int sum = 0;
+            for (int i = 0; i < 10; i++) {
+                sum += tab[i];
+            }
+            double avg = sum / tab.length;
+            System.out.print("Srednia arytmetyczna elementów tablicy wynosi: " + avg);
+        } else if (x == 4) {
+            int min = tab[0];
+            for (int i = 1; i < 10; i++) {
+                if (min > tab[i])
+                    min = tab[i];
+            }
+            System.out.print("Najmniejszy element tablicy wynosi: " + min);
+        } else if (x == 5) {
+            int max = tab[0];
+            for (int i = 1; i < 10; i++) {
+                if (max < tab[i])
+                    max = tab[i];
+
+            }
+            System.out.print("Największy element tablicy wynosi: " + max);
+        }
+
+    }
+}
